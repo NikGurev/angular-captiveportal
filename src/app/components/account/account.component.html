@@ -1,35 +1,20 @@
 <mat-sidenav-container class="sidenav-container"
-                       hasBackdrop="false">
+                      hasBackdrop="false">
   <mat-sidenav opened mode="side">
     <mat-nav-list>
-      <a mat-list-item href="#">Точки доступа</a>
-      <a mat-list-item href="#">Пользователи</a>
-      <a mat-list-item href="#">Стиль страницы</a>
-      <a mat-list-item href="#">Гости</a>
-      <a mat-list-item href="#">Wi-Fi зоны</a>
-      <a mat-list-item href="#">Биллинг</a>
-      <a mat-list-item href="#">Служебные</a>
-      <a mat-list-item href="#">FAQ</a>
-      <a mat-list-item href="#">Статистика</a>
+      <a mat-list-item routerLink="other"  routerLinkActive="active">Точки доступа</a>
+      <a mat-list-item routerLink="other"  routerLinkActive="active">Пользователи</a>
+      <a mat-list-item routerLink="design"  routerLinkActive="active">Стиль страницы</a>
+      <a mat-list-item routerLink="other"  routerLinkActive="active">Гости</a>
+      <a mat-list-item routerLink="other"  routerLinkActive="active">Wi-Fi зоны</a>
+      <a mat-list-item routerLink="other"  routerLinkActive="active">Биллинг</a>
+      <a mat-list-item routerLink="other"  routerLinkActive="active">Служебные</a>
+      <a mat-list-item routerLink="other"  routerLinkActive="active">FAQ</a>
+      <a mat-list-item routerLink="other"  routerLinkActive="active">Статистика</a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
-    <mat-form-field>
-      <mat-label>Sidenav mode</mat-label>
-      <mat-select value="side">
-        <mat-option value="side">Side</mat-option>
-        <mat-option value="over">Over</mat-option>
-        <mat-option value="push">Push</mat-option>
-      </mat-select>
-    </mat-form-field>
-    <mat-form-field>
-      <mat-label>Has backdrop</mat-label>
-      <mat-select>
-        <mat-option>Unset</mat-option>
-        <mat-option [value]="true">True</mat-option>
-        <mat-option [value]="false">False</mat-option>
-      </mat-select>
-    </mat-form-field>
-    <button mat-raised-button>Toggle drawer</button>
+
+    <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>
