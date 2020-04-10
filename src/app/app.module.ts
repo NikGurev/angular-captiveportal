@@ -18,12 +18,18 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { LogInComponent } from './components/log-in/log-in.component';
 import {TextMaskModule} from "angular2-text-mask";
 import { AccountComponent } from './components/account/account.component';
+import { PageDesignComponent } from './components/account/page-design/page-design.component';
+import { HomeComponent } from './components/account/home/home.component';
+import { NavigationComponent } from './components/account/navigation/navigation.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LogInComponent,
-    AccountComponent
+    AccountComponent,
+    PageDesignComponent,
+    HomeComponent,
+    NavigationComponent,
   ],
   imports: [
     BrowserModule,
