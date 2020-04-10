@@ -4,7 +4,6 @@ html, body {
   padding: 0;
 }
 
-
 .app-header {
   justify-content: space-between;
   position: fixed;
@@ -17,10 +16,10 @@ html, body {
 
 .login-wrapper {
   height: 100%;
-  /* background-image: url(https://i.pinimg.com/originals/d8/a8/6c/d8a86ceb9d31f6f91a6eec24facac178.jpg);
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat; */
+  //background-image: url(images/itl.cat_2560x1440-wallpaper-hd_372787.png);
+  //background-position: center;
+  //background-size: cover;
+  //background-repeat: no-repeat;
   min-height: 100vh;
 }
 
@@ -65,7 +64,7 @@ html, body {
 }
 
 .login-wrapper .example-form {
-  /* min-width: 100%; */
+  min-width: 100%;
   max-width: 300px;
   width: 100%;
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {FormBuilder, FormControl, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-log-in',
@@ -11,11 +12,16 @@ export class LogInComponent implements OnInit {
   public myModel = '';
   public mask = ['(', /[1-9]/, /\d/, /\d/, ')', ' ', /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/];
 
+  number = new FormControl('');
 
-
-  constructor() {}
+  constructor(private formBuilder: FormBuilder) {}
 
   ngOnInit() {
     this.title = 'ITMO FREE WIFI';
   }
+
+
+  myControl = new FormControl('', Validators.required);
+
+
 }

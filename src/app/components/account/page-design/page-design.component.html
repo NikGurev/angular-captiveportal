@@ -1,12 +1,21 @@
 <form>
-    <mat-form-field class="example-full-width">
-      <mat-label>Введите название сети</mat-label>
-      <input matInput placeholder="Ex. Pizza" value="Sushi">
-    </mat-form-field>
-  <mat-form-field class="example-full-width">
+  <mat-form-field class="">
+    <mat-label>Введите название сети</mat-label>
+    <input matInput placeholder="Ex. Pizza" value="Sushi">
+  </mat-form-field>
+  <mat-form-field class="">
     <mat-label>Добавьте ваш логотип</mat-label>
     <input matInput placeholder="Ex. Pizza" value="Sushi">
   </mat-form-field>
-    <input type="file" placeholder="Ex. Pizza" value="Sushi">
-  <button mat-raised-button>Toggle drawer</button>
+  <div class="file">
+    <button mat-stroked-button class="upload" (click)="fileInput.click()">
+      <mat-icon aria-hidden="false" aria-label="upload icon">cloud_upload</mat-icon>
+      <span class="upload__text">
+        <ng-container *ngIf="fileInputName === ''; else elseBlock">Добавьте фон</ng-container>
+        <ng-template #elseBlock>{{fileInputName}}</ng-template>
+      </span>
+      <input type="file" #fileInput (change)="setFileName(fileInput)">
+    </button>
+  </div>
+  <button mat-raised-button>Применить</button>
 </form>

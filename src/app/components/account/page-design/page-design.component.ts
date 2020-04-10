@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 
 @Component({
   selector: 'app-page-design',
@@ -6,10 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./page-design.component.scss']
 })
 export class PageDesignComponent implements OnInit {
-
+  fileInputName = '';
   constructor() { }
 
   ngOnInit() {
   }
 
+ setFileName(inputFile: HTMLInputElement): void {
+    this.fileInputName = (inputFile.files.length === 0) ? '' : inputFile.files[0].name;
+  }
 }

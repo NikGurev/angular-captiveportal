@@ -4,3 +4,22 @@ form {
   flex-direction: column;
   align-items: flex-start;
 }
+
+.file {
+  padding-bottom: 1.25em;
+}
+
+.upload {
+  max-width: 180px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  &__text {
+    padding-left: 7px;
+  }
+}
+
+
+
+input[type='file'] {
+  display: none;
+}
