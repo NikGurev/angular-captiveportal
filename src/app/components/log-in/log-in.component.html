@@ -1,36 +1,39 @@
 <div class="login-wrapper" fxLayout="row" fxLayoutAlign="center center">
 
   <mat-card class="box">
+    <div style="width: 100%; display: flex;
+    justify-content: center;">
+      <img src="./assets/itmo_small_white_rus.png" width="80%" alt="company logo" style="">
+    </div>
     <mat-card-header>
-      <mat-card-title>
+        <mat-card-title>
         Подключение к сети <br>
         {{ title }}
       </mat-card-title>
     </mat-card-header>
 
-    <form class="example-form">
+    <form class="example-form" [formGroup]="authForm" (ngSubmit)="onSubmit()">
       <mat-card-content>
-        <mat-checkbox fxLayout="row" fxLayoutAlign="center center" color="primary">
+        <mat-checkbox fxLayout="row"
+                      fxLayoutAlign="center center"
+                      color="primary"
+                      formControlName="agreement">
           Принять условия <a href='#'>соглашения</a>
         </mat-checkbox>
         <mat-form-field class="example-full-width">
           <mat-label>Номер телефона</mat-label>
           <span matPrefix>+7&nbsp;</span>
+          <span matSuffix style="color: red;">*</span>
           <input matInput
+                 formControlName="tel"
                  type="text"
                  [textMask]="{mask: mask}"
                  placeholder="(XXX)-XXX-XXXX"
                  minlength="10"
-                 class="example-left-align form-control"
-                  [formControl]="number">
+                 class="example-left-align form-control">
         </mat-form-field>
       </mat-card-content>
-      <button mat-raised-button class="btn-block">Продолжить</button>
+      <button mat-raised-button class="btn-block" type="submit" [disabled]="!authForm.valid">Продолжить</button>
     </form>
-    <mat-chip-list color="primary" fxLayout="row" fxLayoutAlign="center center" class="language">
-      <mat-chip [selected]="language === 'RU'" color="primary" (click)="language = 'RU'">RU</mat-chip>
-      <mat-chip [selected]="language === 'EN'" color="primary" (click)="language = 'EN'">EN</mat-chip>
-    </mat-chip-list>
   </mat-card>
-
 </div>

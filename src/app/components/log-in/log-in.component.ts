@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormBuilder, FormControl, Validators} from '@angular/forms';
+import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-log-in',
@@ -8,20 +8,31 @@ import {FormBuilder, FormControl, Validators} from '@angular/forms';
 })
 export class LogInComponent implements OnInit {
   title: string;
-  language = 'RU';
+  authForm: FormGroup;
   public myModel = '';
   public mask = ['(', /[1-9]/, /\d/, /\d/, ')', ' ', /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/];
 
-  number = new FormControl('');
 
   constructor(private formBuilder: FormBuilder) {}
 
   ngOnInit() {
     this.title = 'ITMO FREE WIFI';
+    this.initForm();
   }
 
+  private initForm() {
+    let telephoneNumber = '';
+    this.authForm = new FormGroup({
+      tel: new FormControl(telephoneNumber, [
+        Validators.required
+      ]),
+      agreement: new FormControl('', Validators.required)
+    });
+  }
 
-  myControl = new FormControl('', Validators.required);
+  private onSubmit() {
+    console.log(this.authForm);
+  }
 
 
 }

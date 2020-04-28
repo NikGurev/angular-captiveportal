@@ -6,14 +6,13 @@
   <mat-form-field class="">
     <mat-label>Добавьте ваш логотип</mat-label>
     <input matInput placeholder="Ex. Pizza" value="Sushi">
+<!--    TODO: добавить превью-->
   </mat-form-field>
   <div class="file">
     <button mat-stroked-button class="upload" (click)="fileInput.click()">
-      <mat-icon aria-hidden="false" aria-label="upload icon">
-        <img src="./images/cloud_upload-24px.svg" alt="">
-      </mat-icon>
-      <span class="upload__text">
-        <ng-container *ngIf="fileInputName === ''; else elseBlock">Добавьте фон</ng-container>
+      <img src="./assets/attach.png" width="25"  height="25" alt="Insert" *ngIf="fileInputName === ''">
+      <span [className]="fileInputName === '' ? 'upload__text' : ''">
+        <ng-container *ngIf="fileInputName === ''; else elseBlock"></ng-container>
         <ng-template #elseBlock>{{fileInputName}}</ng-template>
       </span>
       <input type="file" #fileInput (change)="setFileName(fileInput)">
