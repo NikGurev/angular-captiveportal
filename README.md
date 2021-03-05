@@ -1,3 +1,3 @@
-# angular-captiveportal
+# Angular captiveportal
 
-[Edit on StackBlitz ⚡️](https://stackblitz.com/edit/angular-captiveportal)
+[Демо на Stackblitz](https://stackblitz.com/edit/angular-captiveportal)
